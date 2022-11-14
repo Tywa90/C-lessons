@@ -60,18 +60,18 @@ using System.Globalization;
  * 3. Простой Конвертер валют(вывести несколько валют)
  */
 //HW 1.1 Среднее арифмитеческое двух чисел
-//Console.WriteLine("1. Среднее арифмитическое двух чисел");
-//Console.WriteLine("Введите последовательно два числа");
-//string firstNum = Console.ReadLine();
-//double a;
-//bool resFirstNum = double.TryParse(firstNum, out a);
+Console.WriteLine("1. Среднее арифмитическое двух чисел");
+Console.WriteLine("Введите последовательно два числа");
+string firstNum = Console.ReadLine();
+double a;
+bool resFirstNum = double.TryParse(firstNum, out a);
 
-//string secondNum = Console.ReadLine();
-//double b;
-//bool resSecondNum = double.TryParse(secondNum, out b);
-//double resultAVG = (a + b) / 2;
-//Console.WriteLine($"Среднее арифметическое чисел {a} и {b} = {resultAVG}");
-//Console.WriteLine();
+string secondNum = Console.ReadLine();
+double b;
+bool resSecondNum = double.TryParse(secondNum, out b);
+double resultAVG = (a + b) / 2;
+Console.WriteLine($"Среднее арифметическое чисел {a} и {b} = {resultAVG}");
+Console.WriteLine();
 
 //HW 1.2 Ввести три числа и вывести результат умножения этих чисел
 //Console.WriteLine("Введите три числа для их перемножения");
