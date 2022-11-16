@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
 
 //Console.WriteLine("Hello, World!");
 
@@ -60,18 +61,18 @@ using System.Globalization;
  * 3. Простой Конвертер валют(вывести несколько валют)
  */
 //HW 1.1 Среднее арифмитеческое двух чисел
-Console.WriteLine("1. Среднее арифмитическое двух чисел");
-Console.WriteLine("Введите последовательно два числа");
-string firstNum = Console.ReadLine();
-double a;
-bool resFirstNum = double.TryParse(firstNum, out a);
+//Console.WriteLine("1. Среднее арифмитическое двух чисел");
+//Console.WriteLine("Введите последовательно два числа");
+//string firstNum = Console.ReadLine();
+//double a;
+//bool resFirstNum = double.TryParse(firstNum, out a);
 
-string secondNum = Console.ReadLine();
-double b;
-bool resSecondNum = double.TryParse(secondNum, out b);
-double resultAVG = (a + b) / 2;
-Console.WriteLine($"Среднее арифметическое чисел {a} и {b} = {resultAVG}");
-Console.WriteLine();
+//string secondNum = Console.ReadLine();
+//double b;
+//bool resSecondNum = double.TryParse(secondNum, out b);
+//double resultAVG = (a + b) / 2;
+//Console.WriteLine($"Среднее арифметическое чисел {a} и {b} = {resultAVG}");
+//Console.WriteLine();
 
 //HW 1.2 Ввести три числа и вывести результат умножения этих чисел
 //Console.WriteLine("Введите три числа для их перемножения");
@@ -93,42 +94,73 @@ Console.WriteLine();
 //Console.WriteLine();
 
 //HW 1.3 Простой Конвертер валют(вывести несколько валют)
-double usDollarBuy = 41.00;
-double ukFuntBuy = 62.00;
-double euEuroBuy = 42.50;
-double plZlotyBuy = 8.50;
+//double usDollarBuy = 41.00;
+//double ukFuntBuy = 62.00;
+//double euEuroBuy = 42.50;
+//double plZlotyBuy = 8.50;
 
-double usDollarSell = 40.00;
-double ukFuntSell = 60.00;
-double euEuroSell = 41.50;
-double plZlotySell = 8.00;
+//double usDollarSell = 40.00;
+//double ukFuntSell = 60.00;
+//double euEuroSell = 41.50;
+//double plZlotySell = 8.00;
 
-Console.WriteLine("\t\tКурс банка на сегодня:");
-Console.WriteLine($"USD\t{usDollarSell}\t{usDollarBuy}");
-Console.WriteLine($"FUNT\t{ukFuntSell}\t{ukFuntBuy}");
-Console.WriteLine($"EUR\t{euEuroSell}\t{euEuroBuy}");
-Console.WriteLine($"ZLT\t{plZlotySell}\t{plZlotyBuy}");
-Console.WriteLine("Конвертер валют. Введите сумму для обмена");
-string inputSum = Console.ReadLine();
-NumberFormatInfo nfi = new NumberFormatInfo()
+//Console.WriteLine("\t\tКурс банка на сегодня:");
+//Console.WriteLine($"USD\t{usDollarSell}\t{usDollarBuy}");
+//Console.WriteLine($"FUNT\t{ukFuntSell}\t{ukFuntBuy}");
+//Console.WriteLine($"EUR\t{euEuroSell}\t{euEuroBuy}");
+//Console.WriteLine($"ZLT\t{plZlotySell}\t{plZlotyBuy}");
+//Console.WriteLine("Конвертер валют. Введите сумму для обмена");
+//string inputSum = Console.ReadLine();
+//NumberFormatInfo nfi = new NumberFormatInfo()
+//{
+//    NumberDecimalSeparator = "."
+//};
+//double inputSumConvert = Convert.ToDouble(inputSum, nfi);
+
+//double usDollarBuyCalc = inputSumConvert / 41.00;
+//double ukFuntBuyCalc = inputSumConvert / 62.00;
+//double euEuroBuyCalc = inputSumConvert / 42.50;
+//double plZlotyBuyCalc = inputSumConvert / 8.50;
+
+//double usDollarSellCalc = inputSumConvert * 40.00;
+//double ukFuntSellCalc = inputSumConvert * 60.00;
+//double euEuroSellCalc = inputSumConvert * 41.50;
+//double plZlotySellCalc = inputSumConvert * 8.00;
+
+//Console.WriteLine("Вы получите: ");
+//Console.WriteLine($"USD\t{usDollarBuyCalc}");
+//Console.WriteLine($"FUNT\t{ukFuntBuyCalc}");
+//Console.WriteLine($"EUR\t{euEuroBuyCalc}");
+//Console.WriteLine($"ZLT\t{plZlotyBuyCalc}");
+
+//  increment / decrement
+void increment()
 {
-    NumberDecimalSeparator = "."
+    int a = 1;
+    a = ++a * a;
+    Console.WriteLine(a);
+
+    int b = 1;
+    b = b++ * b;
+    Console.WriteLine(b);
 };
-double inputSumConvert = Convert.ToDouble(inputSum, nfi);
 
-double usDollarBuyCalc = inputSumConvert / 41.00;
-double ukFuntBuyCalc = inputSumConvert / 62.00;
-double euEuroBuyCalc = inputSumConvert / 42.50;
-double plZlotyBuyCalc = inputSumConvert / 8.50;
 
-double usDollarSellCalc = inputSumConvert * 40.00;
-double ukFuntSellCalc = inputSumConvert * 60.00;
-double euEuroSellCalc = inputSumConvert * 41.50;
-double plZlotySellCalc = inputSumConvert * 8.00;
+void hw_4etnoe()
+{
+    int num;
+    Console.WriteLine("Введите четное число");
+    num = int.Parse(Console.ReadLine());
 
-Console.WriteLine("Вы получите: ");
-Console.WriteLine($"USD\t{usDollarBuyCalc}");
-Console.WriteLine($"FUNT\t{ukFuntBuyCalc}");
-Console.WriteLine($"EUR\t{euEuroBuyCalc}");
-Console.WriteLine($"ZLT\t{plZlotyBuyCalc}");
+    int result = num % 2;
+
+    if (result == 0)
+    {
+        Console.WriteLine("Поздравляю! Вы ввели четное число.");
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода!");
+    }
+};
 
